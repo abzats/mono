@@ -1,0 +1,70 @@
+// Variables;
+@import '../assets/sass/base/variables';
+
+.main {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-color: $gray-light;
+  @media (max-width: $lg - 1px) {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+router-outlet {
+  display: none;
+}
+.menu, .content {
+  position: relative;
+  margin: 2vh auto;
+  height: 96%;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  @media (max-width: $lg - 1px) {
+    height: auto;
+  }
+}
+.menu {
+  background-color: $white;
+  @extend %noselect;
+  @media (max-width: $lg - 1px) {
+    margin: 12px auto;
+  }
+}
+.menu__wrapper {
+  @media (max-width: $lg - 1px) {
+    order: -1;
+  }
+}
+.banner {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 80%;
+  max-width: 1234px;
+  transform: translateX(-50%);
+  padding: 30px 18px;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: $brand-danger;
+  color: $white;
+  text-transform: uppercase;
+  font-size: 15px;
+  z-index: $zi9;
+  @media (max-width: $md + 1px) {
+    top: 0;
+  }
+  &.success {
+    background-color: $brand-primary;
+  }
+  @media (max-width: $lg - 1px) {
+    width: calc(100% - 24px);
+  }
+}

@@ -1,0 +1,31 @@
+// Variables;
+@import '../../../../../assets/sass/base/variables';
+
+:host {
+  position: relative;
+  width: 100%;
+  order: -1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px;
+  @media (min-width: $lg) {
+    border-top: 1px solid $gray-light;
+    border-bottom: 1px solid $gray-light;
+  }
+  .language-item {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    font-size: 19px;
+    letter-spacing: 0.4px;
+    font-weight: bold;
+    cursor: pointer;
+    &:first-child {
+      border-right: 1px solid $gray-light;
+    }
+    &.active {
+      color: $brand-primary;
+    }
+  }
+}

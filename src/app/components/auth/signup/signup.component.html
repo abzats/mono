@@ -1,0 +1,111 @@
+<div class="text-center pb-24">
+  <h1>{{ 'signup.headline' | trans }}</h1>
+  <p class="text-lg-2 pb-24 text-gray">
+    {{ 'signup.form.description' | trans }}
+  </p>
+</div>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="username" class="form-group__label required">Username</label>
+    <input
+      type="text"
+      id="username"
+      formControlName="username"
+      placeholder="{{ 'home.form.username.placeholder' | trans }}"
+      class="form-group__input">
+    <span
+      *ngIf="!signupForm.get('username').valid && (signupForm.get('username').touched || submitAttempt)"
+      class="form-group__help-block">
+          <span *ngIf="signupForm.get('username').errors['required']">
+            {{ 'home.form.username.error' | trans}}
+          </span>
+        </span>
+  </div>
+  <div class="form-group">
+    <label for="email" class="form-group__label required">{{ 'home.form.email.label' | trans }}</label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="{{ 'home.form.email.placeholder' | trans }}"
+      class="form-group__input">
+    <span
+      *ngIf="!signupForm.get('email').valid && (signupForm.get('email').touched || submitAttempt)"
+      class="form-group__help-block">
+        {{ 'home.form.email.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group">
+    <label for="password" class="form-group__label required">{{ 'home.form.password.label' | trans }}</label>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      placeholder="{{ 'home.form.password.placeholder' | trans }}"
+      class="form-group__input">
+    <span
+      *ngIf="!signupForm.get('password').valid && (signupForm.get('password').touched || submitAttempt)"
+      class="form-group__help-block">
+        {{ 'home.form.password.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group no-padding">
+    <label class="form-group__label required">{{ 'home.form.gender.label' | trans }}</label>
+    <div *ngFor="let gender of genders" class="pb-12">
+      <label>
+        <input
+          type="radio"
+          formControlName="gender"
+          [value]="gender['type']">
+        <span class="form-group__label--radio-label">{{ gender['trans'] | trans }}</span>
+      </label>
+    </div>
+  </div>
+  <div class="form-group" formGroupName="preferences">
+    <label class="form-group__label">{{ 'home.form.preferences.label' | trans }}</label>
+    <div *ngFor="let preference of preferences; let i = index; let last = last" [ngClass]="{'pb-12': !last}">
+      <label>
+        <input
+          type="checkbox"
+          formControlName="{{ preference['type'] }}">
+        <span class="form-group__label--radio-label">{{ preference['trans'] }}</span>
+      </label>
+    </div>
+    <span
+      *ngIf="!signupForm.get('preferences.pc').valid"
+      class="form-group__help-block">
+        {{ 'home.form.preferences.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group">
+    <label class="form-group__label">{{ 'home.form.add_info.label' | trans }}</label>
+    <span
+      *ngIf="!addAdditionalInfo"
+      (click)="addAdditionalInfoAction()"
+      class="form__btn-add-info">
+        {{ 'home.form.add_info.button' | trans }}
+      </span>
+    <textarea
+      *ngIf="addAdditionalInfo"
+      type="text"
+      formControlName="info"
+      class="form-group__textarea"></textarea>
+  </div>
+  <div class="form-group">
+    <button class="form__btn--submit" type="submit">{{ 'home.form.submit.button' | trans }}</button>
+    <span
+      *ngIf="!signupForm.valid && submitAttempt"
+      class="form-group__help-block">
+        {{ 'home.form.submit.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group text-center">
+    <hr class="hr-long">
+    <p class="text-lg-2 pb-24">
+      {{ 'signup.form.to_in.text' | trans }}
+    </p>
+    <div class="form-group">
+      <div class="form__btn--switch" (click)="switchForm()">{{ 'signup.form.to_in.label' | trans }}</div>
+    </div>
+  </div>
+</form>

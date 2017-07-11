@@ -1,0 +1,53 @@
+<div class="text-center pb-24">
+  <h1>{{ 'signin.headline' | trans }}</h1>
+  <p class="text-lg-2 pb-24 text-gray">
+    {{ 'signin.form.description' | trans }}
+  </p>
+</div>
+<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="email" class="form-group__label required">{{ 'home.form.email.label' | trans }}</label>
+    <input
+      type="email"
+      id="email"
+      formControlName="email"
+      placeholder="{{ 'home.form.email.placeholder' | trans }}"
+      class="form-group__input">
+    <span
+      *ngIf="!signinForm.get('email').valid && (signinForm.get('email').touched || submitAttempt)"
+      class="form-group__help-block">
+        {{ 'home.form.email.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group">
+    <label for="password" class="form-group__label required">{{ 'home.form.password.label' | trans }}</label>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      placeholder="{{ 'home.form.password.placeholder' | trans }}"
+      class="form-group__input">
+    <span
+      *ngIf="!signinForm.get('password').valid && (signinForm.get('password').touched || submitAttempt)"
+      class="form-group__help-block">
+        {{ 'home.form.password.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group">
+    <button class="form__btn--submit" type="submit">{{ 'home.form.submit.button' | trans }}</button>
+    <span
+      *ngIf="!signinForm.valid && submitAttempt"
+      class="form-group__help-block">
+        {{ 'home.form.submit.error' | trans }}
+      </span>
+  </div>
+  <div class="form-group text-center">
+    <hr class="hr-long">
+    <p class="text-lg-2 pb-24">
+      {{ 'signin.form.to_up.text' | trans }}
+    </p>
+    <div class="form-group">
+      <div class="form__btn--switch" (click)="switchForm()">{{ 'signin.form.to_up.label' | trans }}</div>
+    </div>
+  </div>
+</form>

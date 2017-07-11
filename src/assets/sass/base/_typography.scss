@@ -1,0 +1,65 @@
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0 auto 18px;
+  @media (max-width: $sm - 1px) {
+    font-size: 10vw;
+  }
+  @media (min-width: $sm) and (max-width: $lg - 1px) {
+    font-size: 8vw;
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+.text-white {
+    color: #fff;
+}
+.text-black {
+    color: $black;
+}
+.text-gray-dark {
+    color: $gray-dark;
+}
+.text-gray {
+    color: $gray;
+}
+.text-gray-light {
+    color: $gray-light;
+}
+.text-gray-lighter {
+    color: $gray-lighter;
+}
+
+.text-md-1 {
+    font-size: 15px;
+    font-weight: 600;
+}
+.text-md-2 {
+    font-size: 15px;
+}
+.text-lg-1 {
+    font-size: 17px;
+    font-weight: 600;
+}
+.text-lg-2 {
+    font-size: 17px;
+}
+
+.one_line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

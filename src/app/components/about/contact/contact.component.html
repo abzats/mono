@@ -1,0 +1,11 @@
+<div class="card">
+  <h3>{{ 'about.contact.title' | trans }}</h3>
+  <hr class="hr-short" />
+  <p class="card-text text-gray pb-24" [innerHtml]="'about.contact.text' | trans"></p>
+  <ng-template [ngIf]="globals.isUser === true">
+    <app-contact-form></app-contact-form>
+  </ng-template>
+  <ng-template [ngIf]="globals.isUser === false">
+    <p class="text-lg-1">{{ 'about.contact.description' | trans }}</p>
+  </ng-template>
+</div>

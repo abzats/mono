@@ -1,0 +1,18 @@
+<div class="form">
+  <ng-template [ngIf]="globals.isUser === false">
+
+    <ng-template [ngIf]="globals.form === 'in'">
+      <app-signin></app-signin>
+    </ng-template>
+
+    <ng-template [ngIf]="globals.form === 'up'">
+      <app-signup></app-signup>
+    </ng-template>
+
+  </ng-template>
+
+  <ng-template [ngIf]="globals.isUser === true">
+    <app-logout></app-logout>
+  </ng-template>
+
+</div>

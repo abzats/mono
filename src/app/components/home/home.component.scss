@@ -1,0 +1,71 @@
+// Variables;
+@import '../../../assets/sass/base/variables';
+
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.home {
+  position: relative;
+  margin: 0 auto auto;
+  width: 100%;
+  height: 100%;
+  padding: 64px;
+  background-color: $white;
+  border-radius: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-shadow: 0 2px 10px 0 rgba(21,21,43,.08);
+  @media (max-width: $md + 1px) {
+    padding: 32px 24px;
+  }
+  @media (max-width: $lg - 1px) {
+    overflow-y: hidden;
+    height: auto;
+  }
+  h2 {
+    padding-top: 12px;
+    font-size: 1.7rem;
+  }
+  p {
+    font-size: 16px;
+    padding-bottom: 12px;
+  }
+  ul {
+    li {
+      position: relative;
+      padding-left: 15px;
+      line-height: 1.5;
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 100%;
+        margin-right: 10px;
+        margin-bottom: 2px;
+        background-color: $black;
+        position: absolute;
+        top: 7px;
+        left: 0;
+      }
+    }
+    ul {
+      padding-left: 34px;
+      li {
+        &:before {
+          width: 4px;
+          height: 4px;
+          background-color: transparent;
+          border: 1px solid $black;
+        }
+      }
+    }
+  }
+}

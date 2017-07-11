@@ -1,0 +1,23 @@
+<div class="about">
+  <div class="page-cover text-center" style="background-image: url('assets/img/about/banner.jpg')">
+    <div class="page-cover__content text-white">
+      <h1>
+        {{ 'about.headline' | trans }}
+      </h1>
+      <p class="text-lg-2 pb-24">
+        {{ 'about.description' | trans }}
+      </p>
+      <img src="assets/img/about/avatar.jpg" alt="avatar-img" class="img-circle" />
+    </div>
+  </div>
+  <div class="row row-block">
+    <div class="col-6">
+      <app-about-card></app-about-card>
+    </div>
+    <div class="col-6">
+      <app-cv-card></app-cv-card>
+    </div>
+  </div>
+  <app-reviews></app-reviews>
+  <app-contact></app-contact>
+</div>

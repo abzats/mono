@@ -1,0 +1,55 @@
+// Variables;
+@import '../../../../assets/sass/base/variables';
+
+:host {
+  @media (max-width: $lg - 1px) {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
+.menu__item {
+  @media (max-width: $lg - 1px) {
+    width: 33.333%;
+  }
+  & + .menu__item {
+    @media (min-width: $lg) {
+      margin-top: 2px;
+    }
+  }
+  .menu__item__title {
+    position: relative;
+    text-align: left;
+    @extend %btn;
+    @extend %btn-secondary;
+    @media (max-width: $lg - 1px) {
+      text-align: center;
+      border-radius: 0;
+      padding: 6px 8px;
+    }
+  }
+  .menu__item__content {
+    position: relative;
+    overflow: hidden;
+    padding: 0 24px;
+    height: auto;
+    max-height: 0;
+    transition: all .4s;
+    @media (max-width: $lg - 1px) {
+      display: none;
+    }
+    .menu__item__content__container {
+      padding: 12px 0;
+      line-height: 1.5;
+    }
+  }
+  &.active {
+    .menu__item__title {
+      @extend %btn-primary;
+    }
+    .menu__item__content {
+      transition: all .8s;
+      max-height: 500px;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<h2 class="pb-24">
+  {{ 'reviews.headline' | trans }}
+</h2>
+<div class="row row-block">
+  <div class="col-6 card__wrapper" *ngFor="let review of reviews; let i = index;">
+    <div class="card">
+      <div class="card__top-overlay stars-{{ review.starRating }} text-center">
+        <h4 class="text-lg-1">
+          {{ review.reviewTitle }}
+        </h4>
+        <div class="card__avatar">
+          <img src="assets/img/reviews/data/{{review.avatar}}" alt="{{ review.fullName }}" class="card__avatar__img">
+        </div>
+      </div>
+      <div class="card-block">
+        <div class="one_line text-center text-lg-2 pb-24">
+          {{ review.fullName }}
+        </div>
+        <div class="card__stars-block pb-24">
+          <img src="assets/img/reviews/{{ review.starRating }}-stars.png" alt="{{ review.starRating }}stars" class="card__stars-block__img">
+        </div>
+        <div class="card__text-block text-gray">
+          <p [innerHtml]="review.reviewBody | nl2br"></p>
+        </div>
+        <ul class="table text-md-1">
+          <li>
+            <div class="text-left">
+              {{ review.location }}
+            </div>
+            <div class="text-right">
+              {{ review.createdOn }}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

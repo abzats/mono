@@ -1,0 +1,73 @@
+<div class="home">
+  <h1 class="pb-24">Project description</h1>
+  <p>The application consist of a menu and three pages:</p>
+  <ul>
+    <li>
+      <p>
+        Home - project description,
+      </p>
+    </li>
+    <li>
+      <p>
+        Login - signin/signup forms,
+      </p>
+    </li>
+    <li>
+      <p>
+        About - profile page example.
+      </p>
+    </li>
+  </ul>
+  <p class="pb-24">
+    It is build on Angular 4 with Angular cli using.
+  </p>
+  <h2 class="pb-24">Features description</h2>
+  <h3 class="pb-12">Signin/signup/send a message</h3>
+  <ul class="pb-12">
+    <li>
+      <p>On 'login' page you are able to sign in or sign up. I set up a firebase project, so signin/signup/signout are real actions and all users and user data will be saved on the firebase database. </p>
+    </li>
+    <li>
+      <p>Also you will be auto-logged in if your token is still stored in localstorage.</p>
+    </li>
+    <li>
+      <p>Depends on a user status some elements will be shown or hidden:</p>
+    </li>
+    <ul>
+      <li>
+        <p>Login/logout form,</p>
+      </li>
+      <li>
+        <p>Contact form on 'About' page.</p>
+      </li>
+    </ul>
+    <li>
+      <p>On 'About' page if you are logged in you are able to send a message which also will be stored in the firebase DB.</p>
+    </li>
+  </ul>
+  <h3 class="pb-12">Form validation</h3>
+  <p class="pb-24">All forms validated via angular Validator and show errors if something goes wrong.</p>
+  <h3 class="pb-12">Multi-languages support</h3>
+  <ul class="pb-12">
+    <li>
+      <p>You can switch languages and last language will be saved with cookies using.</p>
+    </li>
+    <li>
+      <p>I created a custom '| trans' pite which works with json and trying to find matches depends on current language. Also it supports internal variable objects.</p>
+    </li>
+    <li>
+      <p>To show translations like initial variable add '?display_keys' parameter to the url (e.g. <a href="https://mono-app-aa73a.firebaseapp.com/about?display_keys=">https://mono-app-aa73a.firebaseapp.com/about?display_keys</a>).</p>
+    </li>
+  </ul>
+  <h3 class="pb-12">Services</h3>
+  <ul>
+    <li>
+      <p>Flash banners service: common banner service to show status messages e.g. when you create an account or send a message;</p>
+    </li>
+    <li>
+      <p>Global variables servise: root variables for the whole project.</p>
+    </li>
+  </ul>
+  <h3 class="pb-12">Dynamic cards</h3>
+  <p>On 'About' page after XHR we get a json with reviews and build review cards.</p>
+</div>

@@ -1,0 +1,104 @@
+// Variables;
+@import '../../../../assets/sass/base/variables';
+
+.form-group {
+  position: relative;
+  margin-bottom: 24px;
+  padding-bottom: 18px;
+  &.no-padding {
+    padding-bottom: 0;
+  }
+  @media (max-width: $lg - 1px) {
+    padding-bottom: 0;
+  }
+  .form-group__label {
+    display: block;
+    letter-spacing: .9px;
+    padding-bottom: 12px;
+    font-weight: 400;
+    &.required {
+      &:after {
+        color: #c72f42;
+        content: "*";
+        padding-left: 2px;
+      }
+    }
+  }
+  .form-group__input, .form-group__textarea {
+    font-size: 17px;
+    background-color: $gray-lighter;
+    border: 1px solid rgba($gray-light, .2);
+    line-height: 1.2em;
+    height: 48px;
+    padding: 12px 18px;
+    width: 100%;
+    &::placeholder {
+      color: rgba($gray, .4);
+    }
+    &::-webkit-input-placeholder {
+      color: rgba($gray, .4);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($gray, .4);
+    }
+    &::-moz-placeholder {
+      color: rgba($gray, .4);
+    }
+  }
+  .form-group__label--radio-label {
+    padding-left: 12px;
+  }
+  .form-group__textarea {
+    height: 400px;
+    max-height: 30vh;
+    line-height: 1.2;
+    resize: none;
+  }
+  .form-group__help-block {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #c72f42;
+    font-size: 12px;
+    @media (max-width: $lg - 1px) {
+      position: static;
+      display: block;
+      padding-top: 2px;
+    }
+  }
+}
+.form__btn--submit, .form__btn--switch {
+  @extend %btn;
+  @extend %btn-primary;
+  @extend %btn-block;
+}
+.form__btn--switch {
+  @extend %btn-secondary;
+}
+.form__btn-add-info {
+  position: relative;
+  color: $brand-primary;
+  cursor: pointer;
+  text-decoration: underline;
+  &:after {
+    position: absolute;
+    right: -12px;
+    content: '>';
+    text-decoration: none;
+  }
+}
+.hr-long {
+  position: relative;
+  background-color: transparent;
+  display: inline-block;
+  width: 100%;
+  margin: 16px 0 34px;
+  text-align: left;
+  height: 2px;
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: $gray-light;
+  }
+}

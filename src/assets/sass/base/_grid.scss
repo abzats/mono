@@ -1,0 +1,68 @@
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 12px;
+  @media (min-width: $lg) {
+    padding: 0 24px;
+  }
+  .row {
+    position: relative;
+    width: calc(100% + 24px);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -12px;
+    margin-right: -12px;
+    &.row-block {
+      display: block;
+      height: auto;
+      &:before {
+        display: table;
+        clear: both;
+      }
+      &:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      div[class*='col-'] {
+        float: left;
+      }
+    }
+    div[class*='col-'] {
+      padding-left: 12px;
+      padding-right: 12px;
+      position: relative;
+    }
+    .col-8 {
+      width: 66.66667%;
+    }
+    .col-4 {
+      width: 33.33333%;
+    }
+    .col-6 {
+      width: 50%;
+    }
+    .col-12 {
+      width: 100%;
+    }
+    @media (max-width: $lg + 1px) {
+      &.row {
+        overflow-y: auto;
+        height: auto;
+      }
+      .col-8 {
+        width: 100%;
+      }
+      .col-6 {
+        width: 100%;
+      }
+      .col-4 {
+        width: 100%;
+      }
+    }
+  }
+}

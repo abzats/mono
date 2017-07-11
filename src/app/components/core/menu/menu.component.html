@@ -1,0 +1,17 @@
+<div *ngFor="let route of routes" [routerLink]="route.path" routerLinkActive="active" class="menu__item" [routerLinkActiveOptions]="{exact: true}">
+  <div class="menu__item__title text-left">
+    {{ route.data.title | trans }}
+  </div>
+
+  <div *ngIf="route.data.id === 'home'" class="menu__item__content">
+    <p class="menu__item__content__container" [innerHtml]="'menu.description.home' | trans | nl2br"></p>
+  </div>
+  <div *ngIf="route.data.id === 'auth'" class="menu__item__content">
+    <p class="menu__item__content__container" [innerHtml]="'menu.description.form' | trans | nl2br"></p>
+  </div>
+  <div *ngIf="route.data.id === 'about'" class="menu__item__content">
+    <p class="menu__item__content__container" [innerHtml]="'menu.description.about' | trans | nl2br"></p>
+  </div>
+</div>
+
+<app-language-menu></app-language-menu>

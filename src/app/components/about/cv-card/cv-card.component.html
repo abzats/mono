@@ -1,0 +1,19 @@
+<div class="card">
+  <h3>
+    {{ 'about.cv.title' | trans }}
+  </h3>
+  <hr class="hr-short" />
+  <p class="text-md-1 pb-12">
+    {{ 'about.cv.sub_title_1' | trans }}
+  </p>
+  <div class="card-list" [innerHtml]="'about.cv.content_1' | trans | nl2br">
+  </div>
+  <p class="text-md-1 pb-12">
+    {{ 'about.cv.sub_title_2' | trans }}
+  </p>
+  <div class="card-list" [innerHtml]="'about.cv.content_2' | trans | nl2br"></div>
+  <p class="text-md-1 pb-12">
+    {{ 'about.cv.sub_title_3' | trans }}
+  </p>
+  <div class="card-list" [innerHtml]="'about.cv.content_3' | trans | nl2br"></div>
+</div>
