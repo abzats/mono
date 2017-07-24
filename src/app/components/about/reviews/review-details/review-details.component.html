@@ -1,0 +1,39 @@
+<div class="review-details">
+  <div class="review-details__darken" (click)="hideReviewDetails.emit(null)">
+    <div class="review-details__close-bnt"></div>
+  </div>
+  <ng-template [ngIf]="null !== details">
+    <div class="card">
+      <div class="card-block">
+        <h3>
+          {{ details.reviewTitle }}
+        </h3>
+        <div class="card__stars-block">
+          <img src="assets/img/reviews/{{ details.starRating }}-stars.png" alt="{{ details.starRating }}stars" class="card__stars-block__img">
+        </div>
+
+        <ul class="table">
+          <li>
+            <div class="table__cell">
+              <img src="{{details.avatar}}" alt="{{ details.fullName }}" class="card__avatar__img">
+            </div>
+            <div class="table__cell">
+              <p class="text-lg-1">
+                {{ details.fullName }}
+              </p>
+              <p>
+                {{ details.location }}
+              </p>
+              <p>
+                {{ details.createdOn }}
+              </p>
+            </div>
+          </li>
+        </ul>
+        <div class="card__text-block text-gray">
+          <p [innerHtml]="details.reviewBody | nl2br"></p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

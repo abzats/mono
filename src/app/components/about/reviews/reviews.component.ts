@@ -8,7 +8,8 @@ import { HttpService } from "../../../services/http.service";
 })
 export class ReviewsComponent implements OnInit {
 
-  reviews:object;
+  reviews: object;
+  reviewDetails: object = null;
 
   constructor(private http: HttpService) { }
 
@@ -16,4 +17,7 @@ export class ReviewsComponent implements OnInit {
     this.http.get().subscribe((reviews) => this.reviews = reviews);
   }
 
+  showReviewDetails(review) {
+    this.reviewDetails = review;
+  }
 }

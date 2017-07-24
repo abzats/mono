@@ -99,17 +99,6 @@ h2 {
       max-width: 198px;
     }
   }
-  .table {
-    display: table;
-    width: 100%;
-    border-spacing: 0;
-    li {
-      display: table-row;
-      & > div {
-        display: table-cell;
-      }
-    }
-  }
   .card__text-block {
     position: relative;
     height: 84px;
@@ -125,7 +114,7 @@ h2 {
     }
   }
   &:hover {
-    @media (min-width: 996px) {
+    @media (min-width: $lg) {
       .card__hover-overlay {
         opacity: 1;
       }

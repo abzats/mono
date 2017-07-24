@@ -1,0 +1,106 @@
+// Variables;
+@import '../../../../../assets/sass/base/variables';
+
+.review-details {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: $zi9;
+  overflow-y: auto;
+}
+.review-details__darken {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .65);
+  z-index: $zi1;
+  @media (max-width: $lg - 1px) {
+    background-color: $white;
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+.review-details__close-bnt {
+  position: relative;
+  float: right;
+  width: 24px;
+  height: 24px;
+  margin: 2vh 2vh 0 0;
+  z-index: $zi2;
+  &:after, &:before {
+    position: absolute;
+    content: '';
+    top: 12px;
+    right: 0;
+    width: 24px;
+    height: 1px;
+    background-color: $white;
+    transform: rotate(-45deg);
+  }
+  &:after {
+    transform: rotate(45deg);
+  }
+  @media (max-width: $lg - 1px) {
+    &:after, &:before {
+      background-color: $black;
+    }
+  }
+}
+.card {
+  position: relative;
+  max-width: 660px;
+  margin: 2vh auto 0;
+  background-color: $white;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px 0 rgba(21,21,43,.05);
+  @extend %noselect;
+  z-index: $zi2;
+  cursor: default;
+  .card-block {
+    padding: 34px;
+  }
+  h3 {
+    font-size: 22px;
+    padding-bottom: 24px;
+  }
+  .card__stars-block {
+    padding-bottom: 24px;
+    .card__stars-block__img {
+      width: 170px;
+      height: auto;
+    }
+  }
+  .card__avatar__img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+  }
+  .card__text-block {
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  @media (max-width: $lg - 1px) {
+    box-shadow: none;
+    margin-top: 50px;
+    .card-block {
+      padding-top: 0;
+    }
+  }
+}
+.table {
+  padding-bottom: 24px;
+  .table__cell {
+    vertical-align: middle;
+    &:first-child {
+      width: 94px;
+    }
+  }
+}

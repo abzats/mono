@@ -31,6 +31,7 @@ import { BannersService } from "./services/banners.service";
 import { ContactService } from "./components/about/contact/contact-form/contact.service";
 import { ReviewsComponent } from './components/about/reviews/reviews.component';
 import { HttpService } from "./services/http.service";
+import { ReviewDetailsComponent } from './components/about/reviews/review-details/review-details.component';
 
 
 
@@ -51,7 +52,8 @@ import { HttpService } from "./services/http.service";
     LogoutComponent,
     ContactComponent,
     ContactFormComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    ReviewDetailsComponent
   ],
   imports: [
     BrowserModule,
