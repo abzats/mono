@@ -1,5 +1,6 @@
 # MonoApp
 
+Live example: https://mono-app-aa73a.firebaseapp.com/
 Trial task for Mono Solutions
 
 # Angular CLI
